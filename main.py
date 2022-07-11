@@ -10,4 +10,64 @@
 # (5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
 
 
+destinations = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC']
+restaurants = ['Italian', 'Mexican', 'Thai', 'American']
+transportation_modes = ['car', 'plane', 'scooter', 'train']
+entertainment_choices = ['Museum', 'Hike', 'Shop', 'Game']
 
+
+
+import random
+
+destination_confirmed = False
+
+while (destination_confirmed == False):
+    print('Would you like to go to ' + random.choice(destinations) + '?')    
+    user_types = input("yes or no: ")
+
+    if (user_types == 'yes'):
+        destination_confirmed = True
+        print("Congrats on your destination!")
+    else:
+        print('Please try again.')
+
+# how to make it not repeat cities
+
+restaurant_confirmed = False
+
+while (restaurant_confirmed == False):
+    print('Would you like to go to ' + random.choice(restaurants) + '?')    
+    user_types = input("yes or no: ")
+
+    if (user_types == 'yes'):
+        restaurant_confirmed = True
+        print("Congrats on your restuarant!")
+    else:
+        print('Please try again.')
+
+
+
+transportation_confirmed = False
+
+while (transportation_confirmed == False):
+    print('Would you like to go by ' + random.choice(transportation_modes) + '?')    
+    user_types = input("yes or no: ")
+
+    if (user_types == 'yes'):
+        transportation_confirmed = True
+        print("Congrats on your transportation!")
+    else:
+        print('Please try again.')
+
+
+entertainment_confirmed = False
+
+while (entertainment_confirmed == False):
+    print('Would you like to go to a ' + random.choice(entertainment_choices) + '?')    
+    user_types = input("yes or no: ")
+
+    if (user_types == 'yes'):
+        entertainment_confirmed = True
+        print("Congrats on your entertainment!")
+    else:
+        print('Please try again.')
