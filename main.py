@@ -10,79 +10,57 @@
 # (5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
 
 
+# def day_trip_generator ('destination', 'restaurant', 'transportation',  'entertainment')
+#     return(f"Enjoy your trip! ")
 
 
-# how to make random not repeat what it's already listed?
-# maybe a sequence type call?
-
-# some_list = ['a', 'b', 'c', 'd', 'e', 'f']
-# random_iterator = iter(some_list)
-# print(next(random_iterator)) #Output = a
-# print(next(random_iterator)) #Output = b
-
-
-# random_iterator2 = iter(destinations)
-
-# print('Would you like to go to ' + next(random_iterator2) + '? Type yes or no. ')
-# print('Would you like to go to ' + next(random_iterator2) + '? Type yes or no. ') 
-# print('Would you like to go to ' + next(random_iterator2) + '? Type yes or no. ')
-# print('Would you like to go to ' + next(random_iterator2) + '? Type yes or no. ') 
-
-
-
-
-destinations = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC']
-restaurants = ['Italian', 'Mexican', 'Thai', 'American']
-transportation_modes = ['car', 'plane', 'scooter', 'train']
-entertainment_choices = ['Museum', 'Hike', 'Shop', 'Game']
+restaurants = ['Chic Fil A', 'WaWa', "Wendy's", 'Taco Bell']
+transportation_modes = ['Car', 'Plane', 'Scooter', 'Train']
+entertainment_choices = ['Museum', 'Hike', 'Shop', 'Swim']
 
 import random
 from stat import FILE_ATTRIBUTE_SPARSE_FILE
 
 
-# trip_confirmed = False
+def random_destination (user_types):
 
-# while trip_confirmed == False:
+    destinations = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC']
+
+    destination_confirmed = False
+    destination_iterator = iter(destinations)
+    choice_number = 1
 
 
-
-
-
-
-destination_confirmed = False
-destination_iterator = iter(destinations)
-choice_number = 1
-
-# what to do when user denies all options in list?
-
-while destination_confirmed == False:
+    while destination_confirmed == False:
+            
+        print('Would you like to go to ' + next(destination_iterator) + '? Type yes or no. ') 
+        user_types = input("yes or no: ")
+       
         
-    print('Would you like to go to ' + next(destination_iterator) + '? Type yes or no. ') 
-    user_types = input("yes or no: ")
+        
+        if (user_types == 'no') and choice_number == 4:
+            random_selection_dest = ('Your randomly selected destination is: ' + random.choice(destinations))
+            print(random_selection_dest)
+            break
+        elif (user_types == 'no') and choice_number < 3:
+            choice_number += 1
+            destination_confirmed = False
+        elif (user_types == 'no') and choice_number == 3:
+            print("")
+            print('Last choice!')
+            print("")
+            destination_confirmed = False
+            choice_number += 1
+        elif (user_types == 'yes'):
+            destination_confirmed = True
+            return destination
+            print("")
+            print('Congrats on your destination!')
+            print("")
+        else:
+            print('Please try again.')
 
-#    if user_types != ('yes') or ('no'):        # want something here for a user input typo
-#       print('I did not recognize that. Please try again.')
-#       destination_confirmed = False           # how to get iteration to start from correct point/repeat index instead of next iteration
-    
-    
-    
-    if (user_types == 'no') and choice_number == 4:
-        print('Your randomly selected destination is: ' + random.choice(destinations))
-        break
-    elif (user_types == 'no') and choice_number < 3:
-        choice_number += 1
-        destination_confirmed = False
-    elif (user_types == 'no') and choice_number == 3:
-        print("")
-        print('Last choice!')
-        print("")
-        destination_confirmed = False
-        choice_number += 1
-    elif (user_types == 'yes'):
-        destination_confirmed = True
-        print('Congrats on your destination!')
-    else:
-        print('not sure')
+    return destination
         
 
 
