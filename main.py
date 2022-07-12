@@ -14,53 +14,53 @@
 #     return(f"Enjoy your trip! ")
 
 
-restaurants = ['Chic Fil A', 'WaWa', "Wendy's", 'Taco Bell']
-transportation_modes = ['Car', 'Plane', 'Scooter', 'Train']
-entertainment_choices = ['Museum', 'Hike', 'Shop', 'Swim']
+# restaurants = ['Chic Fil A', 'WaWa', "Wendy's", 'Taco Bell']
+# transportation_modes = ['Car', 'Plane', 'Scooter', 'Train']
+# entertainment_choices = ['Museum', 'Hike', 'Shop', 'Swim']
 
-import random
-from stat import FILE_ATTRIBUTE_SPARSE_FILE
-
-
-def random_destination (user_types):
-
-    destinations = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC']
-
-    destination_confirmed = False
-    destination_iterator = iter(destinations)
-    choice_number = 1
+# import random
+# from stat import FILE_ATTRIBUTE_SPARSE_FILE
 
 
-    while destination_confirmed == False:
+# def random_destination (user_types):
+
+#     destinations = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC']
+
+#     destination_confirmed = False
+#     destination_iterator = iter(destinations)
+#     choice_number = 1
+
+
+#     while destination_confirmed == False:
             
-        print('Would you like to go to ' + next(destination_iterator) + '? Type yes or no. ') 
-        user_types = input("yes or no: ")
+#         print('Would you like to go to ' + next(destination_iterator) + '? Type yes or no. ') 
+#         user_types = input("yes or no: ")
        
         
         
-        if (user_types == 'no') and choice_number == 4:
-            random_selection_dest = ('Your randomly selected destination is: ' + random.choice(destinations))
-            print(random_selection_dest)
-            break
-        elif (user_types == 'no') and choice_number < 3:
-            choice_number += 1
-            destination_confirmed = False
-        elif (user_types == 'no') and choice_number == 3:
-            print("")
-            print('Last choice!')
-            print("")
-            destination_confirmed = False
-            choice_number += 1
-        elif (user_types == 'yes'):
-            destination_confirmed = True
-            return destination
-            print("")
-            print('Congrats on your destination!')
-            print("")
-        else:
-            print('Please try again.')
+#         if (user_types == 'no') and choice_number == 4:
+#             random_selection_dest = ('Your randomly selected destination is: ' + random.choice(destinations))
+#             print(random_selection_dest)
+#             break
+#         elif (user_types == 'no') and choice_number < 3:
+#             choice_number += 1
+#             destination_confirmed = False
+#         elif (user_types == 'no') and choice_number == 3:
+#             print("")
+#             print('Last choice!')
+#             print("")
+#             destination_confirmed = False
+#             choice_number += 1
+#         elif (user_types == 'yes'):
+#             destination_confirmed = True
+#             return destination
+#             print("")
+#             print('Congrats on your destination!')
+#             print("")
+#         else:
+#             print('Please try again.')
 
-    return destination
+#     return destination
         
 
 

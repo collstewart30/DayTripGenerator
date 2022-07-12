@@ -12,7 +12,7 @@ def day_trip_generator(list, option):
 
 
 
-destinations_list = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC']
+destinations_list = ['Philadelphia', 'Baltimore', 'D.C.', 'NYC', 'Annapolis', '']
 destination_chosen = day_trip_generator(destinations_list, 'destination')
 
 
